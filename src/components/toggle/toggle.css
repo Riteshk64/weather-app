@@ -1,0 +1,8 @@
+.switch {
+  position: relative;
+  display: inline;
+  width: 60px;
+  height: 34px;
+
+  background-color: red;
+}
