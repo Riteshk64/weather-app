@@ -77,7 +77,7 @@ const Forecast = ({ data, unit }) => {
                   </label>
                 </div>
                 <div className="daily-details-grid-item">
-                  <label>Sea Level Pressure</label>
+                  <label>Sea Level</label>
                   <label>{item.main.sea_level} hPa</label>
                 </div>
                 <div className="daily-details-grid-item">

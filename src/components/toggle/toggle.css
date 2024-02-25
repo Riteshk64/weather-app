@@ -68,3 +68,19 @@
 .switch input:checked + .slider:before {
   transform: translateX(16px);
 }
+
+@media screen and (max-width: 768px) {
+  .units-toggle p {
+    font-size: 11px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .units-toggle {
+    margin-right: 10px;
+  }
+
+  .units-toggle p {
+    font-size: 10px;
+  }
+}

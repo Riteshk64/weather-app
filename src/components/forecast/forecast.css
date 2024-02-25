@@ -31,7 +31,7 @@
   color: #212121;
   flex: 1 1;
   font-weight: 600;
-  margin-left: 0.9375em; /* Equivalent to 15px */
+  margin-left: 0.9375em;
 }
 
 .description {
@@ -70,4 +70,66 @@
 
 .daily-details-grid-item label:last-child {
   color: #212121;
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 1.2em;
+  }
+
+  .daily-item {
+    height: 2.2em;
+    font-size: 0.8em;
+    padding: 0.2em 1em;
+  }
+
+  .daily-item .day {
+    margin-left: 0.6em;
+  }
+
+  .description {
+    margin-right: 0.6em;
+  }
+
+  .daily-details-grid {
+    grid-column-gap: 1.5%;
+    -webkit-column-gap: 1.5%;
+    column-gap: 1.5%;
+    padding: 0.2em 1.5em;
+  }
+
+  .daily-details-grid-item {
+    height: 1.5em;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 1em;
+  }
+
+  .daily-item {
+    height: 2em;
+    font-size: 0.7em;
+    padding: 0.2em 0.8em;
+  }
+
+  .daily-item .day {
+    margin-left: 0.4em;
+  }
+
+  .description {
+    margin-right: 0.4em;
+  }
+
+  .daily-details-grid {
+    grid-column-gap: 1%;
+    -webkit-column-gap: 1%;
+    column-gap: 1%;
+    padding: 0.2em 1em;
+  }
+
+  .daily-details-grid-item {
+    height: 1.2em;
+  }
 }
