@@ -1,17 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./toggle.css";
 
-const Toggle = ({ changeUnits }) => {
-  const [isChecked, setIsChecked] = useState(false);
-
-  const handleCheckboxChange = () => {
-    setIsChecked((prevIsChecked) => {
-      const newValue = !prevIsChecked;
-      changeUnits(newValue ? "imperial" : "metric");
-      return newValue;
-    });
-  };
-
+const Toggle = ({ isChecked, handleCheckboxChange }) => {
   return (
     <div className="units-toggle">
       <p>Metric</p>

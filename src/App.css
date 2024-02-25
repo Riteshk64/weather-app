@@ -7,3 +7,38 @@ h1 {
   display: flex;
   justify-content: center;
 }
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.button-84 {
+  align-items: center;
+  background-color: #25292e;
+  border-radius: 8px;
+  border-width: 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  display: inline-flex;
+  flex-direction: column;
+  font-family: Roboto, "Arial" !important;
+  font-size: 13px;
+  height: 35px;
+  justify-content: center;
+  line-height: 1;
+  margin: 0 10px;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  text-align: center;
+  text-decoration: none;
+  transform: translate3d(0, 0, 0);
+  transition: all 150ms;
+  vertical-align: baseline;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
