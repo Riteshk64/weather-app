@@ -1,6 +1,6 @@
 import "./current-weather.css";
 
-const CurrentWeather = ({ data }) => {
+const CurrentWeather = ({ data, unit }) => {
   return (
     <div className="weather">
       <div className="top">
@@ -17,7 +17,10 @@ const CurrentWeather = ({ data }) => {
       </div>
 
       <div className="bottom">
-        <p className="temp">{Math.round(data.main.temp)}°C</p>
+        <p className="temp">
+          {Math.round(data.main.temp)}
+          {unit === "metric" ? "°C" : "°F"}
+        </p>
         <div className="details">
           <div className="paramter-row">
             <span className="label top">Details</span>
@@ -25,12 +28,17 @@ const CurrentWeather = ({ data }) => {
 
           <div className="paramter-row">
             <span className="label">Feels like</span>
-            <span className="value">{Math.round(data.main.feels_like)}°C</span>
+            <span className="value">
+              {Math.round(data.main.feels_like)}
+              {unit === "metric" ? "°C" : "°F"}
+            </span>
           </div>
 
           <div className="paramter-row">
             <span className="label">Wind</span>
-            <span className="value">{data.wind.speed} m/s</span>
+            <span className="value">
+              {data.wind.speed} {unit === "metric" ? " m/s" : " miles/hr"}
+            </span>
           </div>
 
           <div className="paramter-row">

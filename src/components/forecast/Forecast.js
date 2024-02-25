@@ -17,7 +17,7 @@ const weekDays = [
   "Saturday",
 ];
 
-const Forecast = ({ data }) => {
+const Forecast = ({ data, unit }) => {
   const dayInAWeek = new Date().getDay();
   const forecastDays = weekDays
     .slice(dayInAWeek)
@@ -25,7 +25,6 @@ const Forecast = ({ data }) => {
   const next5Days = forecastDays.slice(1, 6);
 
   const filteredData = data.list.filter((item) => {
-    // Check if the forecast time is around noon (adjust as needed)
     const forecastDateTime = new Date(item.dt_txt);
     return forecastDateTime.getHours() === 12; // Assuming noon
   });
@@ -49,8 +48,10 @@ const Forecast = ({ data }) => {
                     {item.weather[0].description}
                   </label>
                   <label className="min-max">
-                    {Math.round(item.main.temp_min)}°C /{" "}
-                    {Math.round(item.main.temp_max)}°C
+                    {Math.round(item.main.temp_min)}
+                    {unit === "metric" ? "°C" : "°F"} /{" "}
+                    {Math.round(item.main.temp_max)}
+                    {unit === "metric" ? "°C" : "°F"}
                   </label>
                 </div>
               </AccordionItemButton>
@@ -66,20 +67,24 @@ const Forecast = ({ data }) => {
                   <label>{item.main.humidity}%</label>
                 </div>
                 <div className="daily-details-grid-item">
-                  <label>Clouds</label>
-                  <label>{item.clouds.all}</label>
+                  <label>Cloudiness</label>
+                  <label>{item.clouds.all}%</label>
                 </div>
                 <div className="daily-details-grid-item">
                   <label>Wind Speed</label>
-                  <label>{item.wind.speed} m/s</label>
+                  <label>
+                    {item.wind.speed} {unit === "metric" ? " m/s" : " miles/hr"}
+                  </label>
                 </div>
                 <div className="daily-details-grid-item">
-                  <label>Sea Level</label>
-                  <label>{item.main.sea_level} m</label>
+                  <label>Sea Level Pressure</label>
+                  <label>{item.main.sea_level} hPa</label>
                 </div>
                 <div className="daily-details-grid-item">
                   <label>Feels like</label>
-                  <label>{item.main.feels_like} °C</label>
+                  <label>
+                    {item.main.feels_like} {unit === "metric" ? "°C" : "°F"}
+                  </label>
                 </div>
               </div>
             </AccordionItemPanel>
