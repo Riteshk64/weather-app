@@ -75,6 +75,8 @@ function App() {
     }
   }, [searchData, currUnit, locationChecked]);
 
+  console.log(currentWeather);
+
   return (
     <div className="container">
       <h1>Weather App</h1>
